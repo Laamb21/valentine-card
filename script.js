@@ -89,12 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // All possible image paths
     const imageSources = [
         "images/IMG_0114.jpg",
-        "images/982668CF-24C7-418F-A273-E4955A2AB276.jpg",
+        "images/cabo.jpg",
         "images/IMG_1443.jpg",
         "images/IMG_0575.jpg",
         "images/IMG_0602.jpg",
         "images/IMG_0613.jpg",
-        "images/IMG_3259.jpg",
+        "images/abbi.jpg",
         // ... Add more if you'd like
     ];
     
