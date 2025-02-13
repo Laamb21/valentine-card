@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/cabo.jpg",
         "images/IMG_1443.jpg",
         "images/IMG_0575.jpg",
-        "images/IMG_0602.jpg",
+        "images/aspen_selfie.jpg",
         "images/IMG_0613.jpg",
         "images/abbi.jpg",
         // ... Add more if you'd like
