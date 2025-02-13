@@ -1,0 +1,211 @@
+/* Basic Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #ffe6ea; /* a soft pink background */
+    font-family: 'Helvetica Neue', sans-serif;
+    overflow-x: hidden; /* so floating animations off-screen don't cause scrollbars */
+  }
+  
+  /* Container for the card content */
+  .card-container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-container h1 {
+    color: #e6005c; /* vibrant pinkish-red */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Photo gallery styling */
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .photo-gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+
+    display: inline-block;
+
+    overflow: visible;
+
+    mask:
+   radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+   radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+   linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+
+    -webkit-clip-path: polygon(
+        -41% 0,
+        50% 91%, 
+        141% 0%
+    );
+
+    clip-path: polygon(
+        -41% 0,
+        50% 91%, 
+        141% 0%
+    );
+  }
+  
+  /* Buttons */
+  .button-row {
+    display: flex;
+    flex-wrap: nowrap;       /* Disable wrapping */
+    justify-content: center; /* Center them horizontally */
+    align-items: center;     /* Vertically center if needed */
+    gap: 1rem; 
+    }
+  
+  .button-row button {
+    -webkit-apperance: none;
+    text-align: center;
+    background-color: #ff4081; /* bright pink */
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+    white-space: nowrap;
+  }
+  
+  .button-row button:hover {
+    background-color: #e6005c; /* darker pink on hover */
+  }
+  
+  /* Hidden message (initially hidden) */
+  .hidden-message {
+    display: none;
+    background-color: #fff;
+    border: 2px solid #e6005c;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .hidden-message p {
+    color: #e6005c;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  /* Floating hearts & sparkles container */
+  .background-animations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* allows clicks through to the underlying buttons */
+    overflow: hidden;
+  }
+  
+  /* Heart styling */
+  .heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml;utf8,<svg fill="%23e6005c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M462.3 62.7c-54.5-46.4-136-37.9-186.4 13.5L256 96.6l-19.9-20.4c-50.3-51.4-131.8-59.9-186.4-13.5C12.3 79.3 0 114.9 0 152.3 0 239.1 55.7 277.1 138.7 342c34.5 27.2 73.8 58.4 115.5 94.1l1.8 1.5c9.7 8.1 23.7 8.1 33.4 0l1.8-1.5c41.7-35.7 81-66.9 115.5-94.1C456.3 277.1 512 239.1 512 152.3c0-37.4-12.3-73-49.7-89.6z"/></svg>') no-repeat center center / contain;
+    opacity: 0.8;
+    animation: floatHearts 10s linear infinite;
+  }
+  
+  /* Sparkle styling */
+  .sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #fff 0%, #ff99c2 70%, #ff99c2 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #fff;
+    opacity: 0.7;
+    animation: sparkleAnimation 5s linear infinite;
+  }
+  
+  /* Keyframes for hearts floating upwards */
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  /* Keyframes for sparkles (twinkling) */
+  @keyframes sparkleAnimation {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Spin the image 360 degrees, with a "flip" halfway to swap the src */
+  @keyframes spinImage {
+    0% {
+      transform: rotateY(0);
+      opacity: 1;
+    }
+    49% {
+      transform: rotateY(90deg);
+      opacity: 0;
+    }
+    50% {
+      transform: rotateY(90deg);
+      opacity: 0;
+      /* This is when we'll swap the image in JS, so it stays hidden. */
+    }
+    51% {
+      transform: rotateY(270deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateY(360deg);
+      opacity: 1;
+    }
+  }
+  
+  .spin {
+    animation: spinImage 1s ease;
+  }
+  

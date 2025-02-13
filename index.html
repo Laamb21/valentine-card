@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine's Day Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background container for floating hearts & sparkles -->
+  <div class="background-animations">
+    <!-- We'll dynamically generate hearts/sparkles in script.js,
+         or you can manually place them if you prefer. -->
+  </div>
+
+  <!-- Main container -->
+  <div class="card-container">
+    <h1>Happy Valentine's Day!</h1>
+    
+    <!-- Images sprinkled throughout -->
+    <div class="photo-gallery">
+      <img src="images/IMG_0114.jpg" alt="Photo 1" />
+      <img src="images/982668CF-24C7-418F-A273-E4955A2AB276.jpg" alt="Photo 2" />
+      <!--img src="images/IMG_1443.jpg" alt="Photo 3" /-->
+      <!-- Add more images as desired -->
+    </div>
+
+    <!-- Buttons: one to play music, one to reveal message -->
+    <div class="button-row">
+      <button id="musicToggleBtn">Play Music</button>
+      <button id="toggleMessageBtn">Show Message</button>
+    </div>
+    
+    <!-- Hidden personal message -->
+    <div id="personalMessage" class="hidden-message">
+      <p>Happy Valentine’s Day!
+        <br/> The weeks always feel too long without you, but the weekends make up for it. 
+        No matter how much time we get, it’s never enough—but I wouldn’t trade a second of it.
+        <br />I love you, I appreciate you, and I still can’t believe I got this lucky.
+        <br /><br/>Love, Liam 
+      </p>
+    </div>
+  </div>
+
+  <!-- Audio (hidden) -->
+  <audio id="valentineMusic" src="music/Just the Way You Are.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
